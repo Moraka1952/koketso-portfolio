@@ -1,109 +1,277 @@
-/* Reset some default styles */
+/* ===== Reset ===== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Body and background */
 body {
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-  padding: 0 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header styles */
-header {
-  text-align: center;
-  padding: 40px 0 20px 0;
-  background-color: #1e1e1e;
-  color: #fff;
+/* ===== Navigation ===== */
+.top-right-nav {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 1000;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.top-right-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
-header p {
-  font-size: 1.2rem;
+.top-right-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* Container for main content */
-main.container {
-  max-width: 1000px;
-  margin: 20px auto;
+.top-right-nav ul li a:hover {
+    color: #0077b5; /* LinkedIn blue accent on hover */
 }
 
-/* Section Titles */
-h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #1e1e1e;
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 120px 20px 60px 20px;
+    background-color: #e6f0ff;
 }
 
-/* Projects styling */
-.project {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-left: 5px solid #4CAF50;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
 }
 
-.project h3 {
-  color: #4CAF50;
-  margin-bottom: 10px;
+.hero .tagline {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
 }
 
-.project p {
-  margin-bottom: 10px;
+/* ===== Contact Form ===== */
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
-.project a {
-  color: #1e88e5;
-  text-decoration: none;
-  margin-right: 10px;
+.contact-form-container form {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 100%;
 }
 
-.project a:hover {
-  text-decoration: underline;
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-/* Footer styles */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  background-color: #1e1e1e;
-  color: #fff;
+.contact-form-container button {
+    background-color: #0077b5;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-footer a {
-  color: #4CAF50;
-  text-decoration: none;
+.contact-form-container button:hover {
+    background-color: #005582;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* ===== Sections ===== */
+.card-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header h1 {
+.card-section h2 {
     font-size: 2rem;
-  }
+    margin-bottom: 25px;
+    text-align: center;
+    color: #0077b5;
+}
 
-  h2 {
-    font-size: 1.5rem;
-  }
+.card-section p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+}
+
+/* ===== Skills ===== */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill-category h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.skill-badge {
+    display: inline-block;
+    background-color: #0077b5;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+/* ===== Projects ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h3 {
+    color: #0077b5;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    flex-grow: 1;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0077b5;
+    padding: 7px 12px;
+    border-radius: 5px;
+    margin-right: 8px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #005582;
+}
+
+/* ===== Certificates ===== */
+#certificates ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#certificates ul li {
+    margin-bottom: 10px;
+}
+
+#certificates ul li a {
+    text-decoration: none;
+    color: #0077b5;
+    font-weight: 500;
+}
+
+#certificates ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Contact Buttons ===== */
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-buttons .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+}
+
+.resume-btn {
+    background-color: #28a745;
+}
+
+.resume-btn:hover {
+    background-color: #1e7e34;
+}
+
+.linkedin-btn {
+    background-color: #0077b5;
+}
+
+.linkedin-btn:hover {
+    background-color: #005582;
+}
+
+.github-btn {
+    background-color: #333;
+}
+
+.github-btn:hover {
+    background-color: #000;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .top-right-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+    }
 }

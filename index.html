@@ -1,115 +1,230 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Koketso Bambo — Portfolio</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koketso Bambo Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("CLtmynKd9x_IHdhjw"); // 🔑 replace with your EmailJS Public Key
+        })();
+    </script>
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
-  <header>
-    <h1>Koketso Bambo — Portfolio</h1>
-    <p>IT graduate | Network Management & AI/ML enthusiast</p>
-  </header>
+<!-- Top-right Navigation -->
+<nav class="top-right-nav">
+    <ul>
+        <li><a href="#" onclick="showSection(event, 'about')">About</a></li>
+        <li><a href="#" onclick="showSection(event, 'skills')">Skills</a></li>
+        <li><a href="#" onclick="showSection(event, 'projects')">Projects</a></li>
+        <li><a href="#" onclick="showSection(event, 'certificates')">Certificates</a></li>
+        <li><a href="#" onclick="showSection(event, 'contact')">Contact</a></li>
+    </ul>
+</nav>
 
-  <!-- Main Content -->
-  <main class="container">
+<!-- Hero Section with Contact Form -->
+<section class="hero">
+    <img src="Logo.jpeg" alt="Koketso Bambo Logo" class="hero-logo">
+    <h1>Koketso Clement Bambo</h1>
+    <p class="tagline">Mathematical Science Grad | AI/ML Enthusiast | Machine Learning | Generative AI | Intelligent Automation</p>
 
-    <!-- Featured Projects Section -->
-    <section id="projects">
-      <h2>Featured Projects</h2>
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+        <form id="contactForm">
+            <h2 class="form-title">Contact Me</h2>
+            <input type="text" name="from_name" placeholder="Your Name" required>
+            <input type="email" name="reply_to" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="formStatus"></p>
+    </div>
 
-      <!-- Week 1 Project -->
-      <div class="project">
-        <h3>AI Concept Chatbot (Week 1)</h3>
-        <p>Interactive AI educational chatbot that serves as a knowledge assistant for AI fundamentals. Built with a no-code tool and trained with 15+ Q/A pairs covering ML, NLP, LLMs, Neural Networks, AI vs ML vs Deep Learning, applications, and ethics.</p>
-        <p>Tech: No-code chatbot (Landbot / Dialogflow / ChatGPT API)</p>
-        <p>
-          <a href="https://github.com/Moraka1952/ai-chatbot-project" target="_blank">Documentation</a> | 
-          <a href="https://landbot.online/v3/H-3057095-7GBX9Q9QT2N2M2HE/index.html" target="_blank">Project Link</a>
-        </p>
-      </div>
+    <!-- Hero Contact Buttons -->
+    <div class="contact-buttons">
+        <a href="https://drive.google.com/file/d/1IP6iew2ZvZPQCpwlRI8w2m3XZwnkePrf/view?usp=sharing" target="_blank" class="btn resume-btn">View My Resume</a>
+        <a href="https://www.linkedin.com/in/koketso-bambo-812218299/" target="_blank" class="btn linkedin-btn">LinkedIn</a>
+        <a href="https://github.com/Moraka1952" target="_blank" class="btn github-btn">GitHub</a>
+    </div>
+</section>
 
-      <!-- Week 2 Project -->
-      <div class="project">
-        <h3>Sector-Specific AI Prototype (Week 2)</h3>
-        <p>Design and prototype an AI solution addressing a specific challenge in your selected sector. Includes research on existing AI applications, problem definition with impact metrics, and a functional no-code prototype demonstrating data input, AI processing, user-friendly output, and basic error handling.</p>
-        <p>Tech: No-code tools, AI prototype development, Figma, ethical analysis</p>
-        <p>
-          <a href="https://garb-hut-44763277.figma.site/" target="_blank">Project Link</a> | 
-          <a href="https://capeitinitiative-my.sharepoint.com/:b:/g/personal/siyabonga_mahlangu_capaciti_org_za/EWWCA8houyVGgL4Ti3mqXpwBsjoiOHEDkfrcyP2cnp262w?e=mXEP6u" target="_blank">Documentation</a>
-        </p>
-      </div>
+<!-- About Me -->
+<section class="card-section" id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate Data Scientist and AI Enthusiast with hands-on experience building machine learning models, dashboards, and AI-powered applications. My goal is to leverage data-driven insights to solve real-world problems and contribute to innovative AI solutions.</p>
+</section>
 
-      <!-- Week 3 Project -->
-      <div class="project">
-        <h3>Custom Content Generator (Week 3)</h3>
-        <p>Create a specialized content generation tool that produces high-quality outputs for a specific use case, including marketing copy, educational materials, creative writing, technical documentation, or visual assets. Built using generative AI APIs with 5+ optimized prompt templates, input validation, performance tracking, and error handling.</p>
-        <p>Tech: Generative AI APIs, Prompt Engineering, No-code Tools</p>
-        <p>
-          <a href="https://www.canva.com/design/DAGvTTYHHl0/M0Ftt010BQ79vZF_SDszeg/view" target="_blank">Project Link</a> | 
-          <a href="https://capeitinitiative-my.sharepoint.com/:w:/g/personal/siyabonga_mahlangu_capaciti_org_za/EUcQzfwumahMqObS0BcNm0EBp6Uhc8-z0G7VNtPPij1ajg?e=TKSHEV" target="_blank">Documentation</a>
-        </p>
-      </div>
+<!-- Skills -->
+<section class="card-section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Programming</h3>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Pandas & NumPy</span>
+            <span class="skill-badge">Scikit-learn</span>
+            <span class="skill-badge">TensorFlow / PyTorch</span>
+        </div>
+        <div class="skill-category">
+            <h3>Tools & Platforms</h3>
+            <span class="skill-badge">Streamlit</span>
+            <span class="skill-badge">Power BI</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">Git & GitHub</span>
+        </div>
+    </div>
+</section>
 
-      <!-- Week 4 Project -->
-      <div class="project">
-        <h3>AI Resume Builder (Week 4)</h3>
-        <p>Developed an intelligent resume generation system that creates customized, ATS-friendly resumes based on user inputs. Features include content generation, industry-specific keyword optimization, multiple format export, template customization, and smart content suggestions with feedback loop.</p>
-        <p>Tech: Python, Streamlit, AI content generation, ATS optimization</p>
-        <p>
-          <a href="https://capeitinitiative-my.sharepoint.com/:w:/g/personal/siyabonga_mahlangu_capaciti_org_za/EeNIyHbmmfxNrL3mK7VIwbIBTFF5W8HQ5IBIATnwAt3k1w?e=2vp7wF" target="_blank">Documentation</a> | 
-          <a href="https://resume-generator-app-hmiww35spceec5m9nbzawq.streamlit.app/" target="_blank">Project Link</a> | 
-          <a href="https://github.com/Moraka1952/resume-generator-app" target="_blank">Source Code</a>
-        </p>
-      </div>
+<!-- Projects -->
+<section class="card-section" id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
 
-      <!-- Week 5 Project -->
-      <div class="project">
-        <h3>Gemini Sentiment Analysis Dashboard (Week 5)</h3>
-        <p>Interactive dashboard for sentiment analysis on text data, supporting direct input or file upload, multi-class classification, confidence scoring, keyword extraction, comparative analysis, interactive visualizations, and export options (CSV, JSON, PDF).</p>
-        <p>Tech: Python, Streamlit, NLP APIs, Data Visualization</p>
-        <p>
-          <a href="https://github.com/Moraka1952/Gemini_Sentiment_App" target="_blank">GitHub Repo</a> | 
-          <a href="https://g.co/gemini/share/90720c2061b4" target="_blank">Deployment Link</a> | 
-          <a href="https://capeitinitiative.sharepoint.com/:w:/s/AdvancedDigitalSkills4/EUOshHKYnQhOsgS0e75Or7IBLB8cop9ccWJlZWeibtY9CA?e=ieeKd5" target="_blank">Documentation</a>
-        </p>
-      </div>
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h3>AI Concept Chatbot (Week 1)</h3>
+            <p>An interactive AI educational chatbot designed to teach learners foundational AI concepts, NLP, LLMs, Neural Networks, and AI Ethics.</p>
+            <div class="project-links">
+                <a href="https://github.com/Moraka1952/ai-chatbot-project" target="_blank">Documentation</a>
+                <a href="https://landbot.online/v3/H-3057095-7GBX9Q9QT2N2M2HE/index.html" target="_blank">Project Link</a>
+            </div>
+        </div>
 
-      <!-- Week 6 Project -->
-      <div class="project">
-        <h3>Bias Audit Report (Week 6)</h3>
-        <p>Conducted a bias audit on ML datasets/models, identifying ethical concerns and proposing mitigation strategies with visual/statistical representation and multiple bias mitigation techniques.</p>
-        <p>Tech: Python, Jupyter Notebook/Colab, AI Fairness Toolkits</p>
-        <p>
-          <a href="https://github.com/Moraka1952/Bias-Audit-Report" target="_blank">Complete Deployment Link</a> | 
-          <a href="https://www.canva.com/design/DAGxt0a3muM/u4-E_47e0MkLKU0Um_whRA/edit?utm_content=DAGxt0a3muM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Presentation</a>
-        </p>
-      </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h3>Sector-Specific AI Prototype (Week 2)</h3>
+            <p>Functional AI prototype solving real-world sector challenges (Education, Healthcare, Agriculture) with ethical AI considerations.</p>
+            <div class="project-links">
+                <a href="https://garb-hut-44763277.figma.site/" target="_blank">Project Link</a>
+                <a href="https://capeitinitiative-my.sharepoint.com/:b:/g/personal/siyabonga_mahlangu_capaciti_org_za/EWWCA8houyVGgL4Ti3mqXpwBsjoiOHEDkfrcyP2cnp262w?e=mXEP6u" target="_blank">Documentation</a>
+            </div>
+        </div>
 
-      <!-- Week 7 Project -->
-      <div class="project">
-        <h3>End-to-End AI Solution (Week 7)</h3>
-        <p>Comprehensive AI application integrating multiple AI technologies. Includes language, vision/speech, data systems, user-friendly interface, persistent storage, robust error handling, and scalable architecture.</p>
-        <p>Tech: Web frontend, Backend API coordination, Data persistence, AI APIs integration</p>
-        <p>
-          <a href="https://github.com/LindiMk/MediMindv2" target="_blank">GitHub Repo</a> | 
-          <a href="https://medimindv2.netlify.app/" target="_blank">Deployment Link</a> | 
-          <a href="https://magenta-valentina-8.tiiny.site/" target="_blank">Documentation</a> | 
-          <a href="https://capeitinitiative-my.sharepoint.com/:v:/g/personal/lindiwe_mkuzangwe_capaciti_org_za/EZu9LYDqPnRPnktKAWiWmZwBzYTY0jX58joiidLhv-EdEg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hwpacw" target="_blank">Live Demo/Presentation</a>
-        </p>
-      </div>
+        <!-- Project 3 -->
+        <div class="project-card">
+            <h3>Custom Content Generator (Week 3)</h3>
+            <p>Specialized AI content generation tool for marketing, education, creative writing, and technical documentation.</p>
+            <div class="project-links">
+                <a href="https://www.canva.com/design/DAGvTTYHHl0/M0Ftt010BQ79vZF_SDszeg/view" target="_blank">Project Link</a>
+                <a href="https://capeitinitiative-my.sharepoint.com/:w:/g/personal/siyabonga_mahlangu_capaciti_org_za/EUcQzfwumahMqObS0BcNm0EBp6Uhc8-z0G7VNtPPij1ajg?e=TKSHEV" target="_blank">Documentation</a>
+            </div>
+        </div>
 
-    </section>
-  </main>
+        <!-- Project 4 -->
+        <div class="project-card">
+            <h3>AI Resume Builder (Week 4)</h3>
+            <p>Intelligent resume generator that creates customized, ATS-friendly resumes with multiple templates and optimization for job descriptions.</p>
+            <div class="project-links">
+                <a href="https://capeitinitiative-my.sharepoint.com/:w:/g/personal/siyabonga_mahlangu_capaciti_org_za/EeNIyHbmmfxNrL3mK7VIwbIBTFF5W8HQ5IBIATnwAt3k1w?e=2vp7wF" target="_blank">Documentation</a>
+                <a href="https://resume-generator-app-hmiww35spceec5m9nbzawq.streamlit.app/" target="_blank">Project Link</a>
+                <a href="https://github.com/Moraka1952/resume-generator-app" target="_blank">Source Code</a>
+            </div>
+        </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>Contact: Koketso Bambo • <a href="https://www.linkedin.com/in/koketso-bambo-812218299/" target="_blank">LinkedIn</a></p>
-  </footer>
+        <!-- Project 5 -->
+        <div class="project-card">
+            <h3>Gemini Sentiment Analysis Dashboard (Week 5)</h3>
+            <p>Interactive dashboard analyzing sentiment in text data with multi-class classification, keyword extraction, and exportable results.</p>
+            <div class="project-links">
+                <a href="https://github.com/Moraka1952/Gemini_Sentiment_App" target="_blank">GitHub Repo</a>
+                <a href="https://g.co/gemini/share/90720c2061b4" target="_blank">Deployment Link</a>
+                <a href="https://capeitinitiative.sharepoint.com/:w:/s/AdvancedDigitalSkills4/EUOshHKYnQhOsgS0e75Or7IBLB8cop9ccWJlZWeibtY9CA?e=ieeKd5" target="_blank">Documentation</a>
+            </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+            <h3>Bias Audit Report (Week 6)</h3>
+            <p>Comprehensive bias audit of ML datasets/models with fairness metrics, visualizations, and mitigation techniques.</p>
+            <div class="project-links">
+                <a href="https://github.com/Moraka1952/Bias-Audit-Report" target="_blank">Deployment Link</a>
+                <a href="https://www.canva.com/design/DAGxt0a3muM/u4-E_47e0MkLKU0Um_whRA/edit?utm_content=DAGxt0a3muM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Presentation</a>
+            </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card">
+            <h3>End-to-End AI Solution (Week 7)</h3>
+            <p>Comprehensive AI application integrating multiple AI technologies with scalable architecture and user-friendly interface.</p>
+            <div class="project-links">
+                <a href="https://github.com/LindiMk/MediMindv2" target="_blank">GitHub Repo</a>
+                <a href="https://medimindv2.netlify.app/" target="_blank">Deployment Link</a>
+                <a href="https://magenta-valentina-8.tiiny.site/" target="_blank">Documentation</a>
+                <a href="https://capeitinitiative-my.sharepoint.com/:v:/g/personal/lindiwe_mkuzangwe_capaciti_org_za/EZu9LYDqPnRPnktKAWiWmZwBzYTY0jX58joiidLhv-EdEg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=hwpacw" target="_blank">Live Demo</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Certificates -->
+<section class="card-section" id="certificates">
+    <h2>Certificates</h2>
+    <ul>
+        <li><a href="https://drive.google.com/file/d/1wEWop6wTLn09ma4agPGsxs37wvMLVhLW/view?usp=sharing" target="_blank">Python Development and AI Foundations</a></li>
+        <li><a href="https://drive.google.com/file/d/14AJi8GQhIVe4a_9CA-4YpXT5F3E6iNee/view?usp=sharing" target="_blank">Negotiation Skills (Negotiate and Resolve Conflict)</a></li>
+        <li><a href="https://drive.google.com/file/d/1d_YxnlaXT1Y6Lbt1xzP6c-_bdIseBVC9/view?usp=sharing" target="_blank">Trustworthy AI (Managing Bias, Ethics, and Accountability)</a></li>
+        <li><a href="https://drive.google.com/file/d/1LXfuvYcqaZGGttKdCVlwh80huE_y8dMC/view?usp=sharing" target="_blank">Artificial Intelligence on Microsoft Azure</a></li>
+        <li><a href="https://drive.google.com/file/d/14r3ul9xe7aAVoVQuCr8bVCe20uYlsTqH/view?usp=sharing" target="_blank">Solving Problems with Creative and Critical Thinking</a></li>
+        <li><a href="https://drive.google.com/file/d/1Du51nKchA9AoYwI1HEhQIGr1rgeOxkXr/view?usp=sharing" target="_blank">Managing Conflicts with Cultural and Emotional Intelligence</a></li>
+        <li><a href="https://drive.google.com/file/d/1l90G_VCzHHZoy6FiEAzvMhIJeLtoqzNb/view?usp=sharing" target="_blank">Grit and Growth Mindset</a></li>
+        <li><a href="https://drive.google.com/file/d/1kFO96w4cFlcgLYq7FYXcP2uFmh6Eqiz0/view?usp=sharing" target="_blank">Financial Planning For Young Adults</a></li>
+        <li><a href="https://drive.google.com/file/d/1Ovv4uMRjkuAYUYTO8Y9FWkswntxHe1KA/view?usp=sharing" target="_blank">Introduction to Artificial Intelligence (AI)</a></li>
+        <li><a href="https://drive.google.com/file/d/1PGFsvTggqmaWiEvT_tSNtEPk_L-y3cuo/view?usp=sharing" target="_blank">Python for Data Science, AI & Development</a></li>
+        <li><a href="https://drive.google.com/file/d/1E_kCo2oKhz0cITBJGiFD-JTE1_oXMDB1/view?usp=sharing" target="_blank">AI Essentials</a></li>
+        <li><a href="https://drive.google.com/file/d/1Iqs7SJ5HOipgR_UL93yPf-STPR3Qiflr/view?usp=sharing" target="_blank">Emotional Intelligence</a></li>
+        <li><a href="https://drive.google.com/file/d/1DGnXzhdSHnUvyd79ADVm_Ff3eTZlM2b_/view?usp=sharing" target="_blank">Work Smarter, Not Harder (Time Management)</a></li>
+        <li><a href="https://drive.google.com/file/d/1LUK1nErGS1i51V2g_9Yux47AM6sI0sHr/view?usp=sharing" target="_blank">Leading with Impact (Team Dynamics, Strategy, Ethics)</a></li>
+        <li><a href="https://drive.google.com/file/d/1KNtA6NoDS-6vE27gFMC3jbxOn-63Ct-T/view?usp=sharing" target="_blank">Generative AI with Large Language Models</a></li>
+        <li><a href="https://drive.google.com/file/d/1Vy_TvqiQZLRcpxcrf0JS1j8o-OuMQFeT/view?usp=sharing" target="_blank">AI Foundations (Prompt Engineering with ChatGPT)</a></li>
+        <li><a href="https://drive.google.com/file/d/1WoO0qBL--7xh3-TzUvO4M_oi6DQCmB7_/view?usp=sharing" target="_blank">Introduction to Responsible AI</a></li>
+        <li><a href="https://drive.google.com/file/d/1AdXT-7qsdQqSUUd1t-baW2T61WpYYlMf/view?usp=sharing" target="_blank">Finding Your Professional Voice</a></li>
+        <li><a href="https://drive.google.com/file/d/18sveafKEcph-kFY3j6LFL2tvfiN0BcLa/view?usp=sharing" target="_blank">Introduction to Generative AI</a></li>
+        <li><a href="https://drive.google.com/file/d/1fqblcOgQIHunKgu5BG0E3lue73nX2vMG/view?usp=sharing" target="_blank">Introduction to Personal Branding</a></li>
+    </ul>
+</section>
+
+<!-- Contact Section -->
+<section class="card-section" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: moraka1952@gmail.com</p>
+    <p>Phone: 0692763893</p>
+    <p>WhatsApp: 0692763893</p>
+</section>
+
+<script>
+    function showSection(event, sectionId) {
+        if(event) event.preventDefault();
+        const sections = document.querySelectorAll('.card-section');
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+        window.scrollTo(0,0);
+    }
+
+    // Show About by default
+    document.addEventListener('DOMContentLoaded', () => {
+        showSection(new Event('click'), 'about');
+    });
+
+    // Handle EmailJS form submission
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        emailjs.sendForm("service_b0d3ple", "template_rgsuc2l", this)
+        .then(() => {
+            document.getElementById("formStatus").innerText = "✅ Message sent successfully!";
+            this.reset();
+        }, (error) => {
+            document.getElementById("formStatus").innerText = "❌ Failed to send message. Try again.";
+            console.error("EmailJS Error:", error);
+        });
+    });
+</script>
 
 </body>
 </html>
